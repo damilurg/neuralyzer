@@ -1,0 +1,33 @@
+{
+  "name": "neuralyzer",
+  "version": "0.0.1",
+  "description": "💥 MIB-style flash effect to forget all frontend errors",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "keywords": [
+    "neuralyzer",
+    "mib",
+    "flash",
+    "error-handler",
+    "angular",
+    "react",
+    "vue",
+    "ui"
+  ],
+  "author": "damilurg",
+  "license": "MIT",
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^12.1.4",
+    "rollup": "^3.0.0",
+    "rollup-plugin-css-only": "^4.0.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "tslib": "^2.8.1"
+  }
+}
