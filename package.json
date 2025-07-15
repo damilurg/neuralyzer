@@ -1,5 +1,5 @@
 {
-  "name": "neuralyzer",
+  "name": "neuralyzer-flash",
   "version": "0.0.1",
   "description": "💥 MIB-style flash effect to forget all frontend errors",
   "type": "module",
@@ -11,6 +11,7 @@
   },
   "keywords": [
     "neuralyzer",
+    "neuralyzer-flash",
     "mib",
     "flash",
     "error-handler",
