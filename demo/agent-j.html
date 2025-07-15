@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Agent J Neuralyzer Demo</title>
+    <style>
+        body {
+            background: #111;
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .agent-j {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        .head {
+            width: 100px;
+            height: 100px;
+            background: #2e1f14;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .glasses {
+            position: absolute;
+            top: 35px;
+            left: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .glass {
+            width: 30px;
+            height: 20px;
+            background: black;
+            border-radius: 5px;
+        }
+
+        .bridge {
+            width: 10px;
+            height: 5px;
+            background: black;
+            margin: 0 5px;
+        }
+
+        .body {
+            width: 80px;
+            height: 120px;
+            background: black;
+            position: relative;
+            margin-top: 10px;
+            border-radius: 10px;
+        }
+
+        .tie {
+            width: 10px;
+            height: 60px;
+            background: red;
+            position: absolute;
+            top: 10px;
+            left: 35px;
+            border-radius: 2px;
+        }
+
+        /* Arm */
+        .arm {
+            width: 20px;
+            height: 60px;
+            background: black;
+            position: absolute;
+            right: -20px;
+            top: 40px;
+            transform: rotate(45deg);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        /* Neuralyzer */
+        .neuralyzer {
+            width: 10px;
+            height: 30px;
+            background: silver;
+            border-radius: 2px;
+            margin-top: 2px;
+            cursor: pointer;
+            box-shadow: 0 0 5px 2px #0ff;
+            transition: box-shadow 0.2s;
+        }
+
+        .neuralyzer:hover {
+            box-shadow: 0 0 10px 4px #0ff;
+        }
+
+        /* Flash overlay */
+        #flash-overlay {
+            position: fixed;
+            inset: 0;
+            background: white;
+            pointer-events: none;
+            opacity: 0;
+            z-index: 9999;
+        }
+
+        /* Flash animation */
+        @keyframes flash-blink {
+            0% { opacity: 1; }
+            25% { opacity: 0.5; }
+            50% { opacity: 1; }
+            75% { opacity: 0.3; }
+            100% { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="agent-j">
+    <div class="head">
+        <div class="glasses">
+            <div class="glass left"></div>
+            <div class="bridge"></div>
+            <div class="glass right"></div>
+        </div>
+    </div>
+    <div class="body">
+        <div class="tie"></div>
+        <div class="arm">
+            <div class="neuralyzer" title="Click to flash" onclick="triggerFlash()"></div>
+        </div>
+    </div>
+</div>
+
+<div id="flash-overlay"></div>
+
+<script>
+    function triggerFlash() {
+        const overlay = document.getElementById('flash-overlay');
+        overlay.style.animation = 'flash-blink 1s ease-out';
+
+        setTimeout(() => {
+            overlay.style.animation = '';
+        }, 1000);
+
+        console.log(`
+💥 *FLASH ACTIVATED*
+😎 Memory erased.
+🧠 You saw nothing.
+    `);
+    }
+</script>
+
+</body>
+</html>

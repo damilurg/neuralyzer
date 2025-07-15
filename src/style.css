@@ -1,0 +1,25 @@
+/* style.css */
+.neuralyzer-flash {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle, white 0%, rgba(255,255,255,0.95) 70%, rgba(255,255,255,0) 100%);
+    z-index: 99999;
+    opacity: 1;
+    pointer-events: none;
+    animation: flash-burst 0.5s ease-out;
+}
+
+@keyframes flash-burst {
+    0% {
+        opacity: 1;
+        filter: brightness(10) blur(1px);
+    }
+    50% {
+        opacity: 0.9;
+        filter: brightness(50) blur(0);
+    }
+    100% {
+        opacity: 0;
+        filter: brightness(1) blur(0);
+    }
+}
